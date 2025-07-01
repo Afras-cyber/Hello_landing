@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blondify - Pohjoismaiden #1 kampaamo blondeille</title>
+    <meta name="description" content="Pohjoismaiden #1 kampaamot blondeille. Vaalennukset, balayaget, raidat tai mikä tahansa muu ihana lopputulos." />
+    
+    <!-- Ultra-critical DNS preconnects only -->
+    <link rel="preconnect" href="https://faytlsrwiszkvakznkux.supabase.co" crossorigin />
+    
+    <!-- Temporarily disabled problematic image preloads to prevent resource exhaustion -->
+    <!--
+    <link
+      rel="preload"
+      as="image"
+      href="https://faytlsrwiszkvakznkux.supabase.co/storage/v1/object/public/media/videos/herom-blondify.jpeg?width=320&quality=30&format=webp"
+      media="(max-width: 767px)"
+      fetchpriority="high"
+      type="image/webp"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://faytlsrwiszkvakznkux.supabase.co/storage/v1/object/public/media/videos/hero-blondify.jpeg?width=768&quality=35&format=webp"
+      media="(min-width: 768px)"
+      fetchpriority="high"
+      type="image/webp"
+    />
+    -->
+    
+    <!-- CRITICAL: Inline minimal CSS for immediate render -->
+    <style>
+      /* Critical path CSS with font-display: swap */
+      @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+      
+      body{margin:0;font-family:'Red Hat Display',system-ui,-apple-system,sans-serif;font-display:swap;background:#000;color:#fff;overflow-x:hidden}
+      .bg-black{background:#000}
+      .text-white{color:#fff}
+      .min-h-screen{min-height:100vh}
+      .flex{display:flex}
+      .items-center{align-items:center}
+      .items-end{align-items:flex-end}
+      .justify-center{justify-content:center}
+      .relative{position:relative}
+      .absolute{position:absolute}
+      .inset-0{top:0;right:0;bottom:0;left:0}
+      .w-full{width:100%}
+      .h-full{height:100%}
+      .h-screen{height:100vh}
+      .object-cover{object-fit:cover}
+      .overflow-hidden{overflow:hidden}
+      .z-10{z-index:10}
+      .text-blondify-blue{color:#48bcff}
+      .bg-blondify-blue{background:#48bcff}
+      .hidden{display:none}
+      .blondify-container{max-width:80rem;margin:0 auto;padding:0 1rem}
+      .hero-container{position:relative;height:100vh;width:100%;overflow:hidden}
+      .hero-bg{position:absolute;inset:0;background:#000}
+      .hero-content{position:relative;height:100%;width:100%;z-index:10;display:flex;align-items:flex-end;padding-bottom:2rem}
+      .hero-placeholder{background:linear-gradient(45deg,#1a1a1a,#2a2a2a);width:100%;height:100vh;position:absolute;top:0;left:0}
+      .mobile-touch-target{min-height:48px;min-width:48px;touch-action:manipulation}
+      .font-redhat{font-family:'Red Hat Display',system-ui,-apple-system,sans-serif;font-display:swap}
+      .font-redhat-light{font-family:'Red Hat Display',system-ui,-apple-system,sans-serif;font-weight:300;font-display:swap}
+      
+      /* Font display swap for all fonts */
+      *{font-display:swap !important}
+      
+      @media(min-width:768px){.md\:block{display:block}.md\:hidden{display:none}.hero-content{padding-bottom:3rem}}
+      @media(min-width:640px){.blondify-container{padding:0 1.5rem}}
+      
+      /* Mobile-specific touch optimizations */
+      @media(max-width:768px){
+        .mobile-touch-target{min-height:48px;min-width:48px}
+        body{-webkit-overflow-scrolling:touch}
+      }
+    </style>
+    
+    <!-- SEO essentials -->
+    <meta property="og:title" content="Blondify - Pohjoismaiden #1 kampaamo blondeille" />
+    <meta property="og:description" content="Pohjoismaiden #1 kampaamot blondeille. Vaalennukset, balayaget, raidat tai mikä tahansa muu ihana lopputulos." />
+    <meta property="og:type" content="website" />
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- Ultra-minimal loading state -->
+      <div class="hero-container">
+        <div class="hero-bg">
+          <div class="hero-placeholder"></div>
+        </div>
+      </div>
+    </div>
+    
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

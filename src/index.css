@@ -1,0 +1,389 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom fonts - optimized loading */
+.font-redhat {
+  font-family: 'Red Hat Display', system-ui, -apple-system, sans-serif;
+  font-display: swap;
+}
+
+.font-redhat-light {
+  font-family: 'Red Hat Display', system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  font-display: swap;
+}
+
+/* Brand colors - Updated to use the correct blondify-blue #48bcff */
+.text-blondify-blue {
+  color: #48bcff;
+}
+
+.bg-blondify-blue {
+  background-color: #48bcff;
+}
+
+.border-blondify-blue {
+  border-color: #48bcff;
+}
+
+/* Container utility */
+.blondify-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Polestar-style scrollable container */
+.polestar-scrollable {
+  /* Custom scrollbar styling for Polestar aesthetic */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(72, 188, 255, 0.3) transparent;
+}
+
+.polestar-scrollable::-webkit-scrollbar {
+  width: 4px;
+}
+
+.polestar-scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.polestar-scrollable::-webkit-scrollbar-thumb {
+  background: rgba(72, 188, 255, 0.3);
+  border-radius: 2px;
+}
+
+.polestar-scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(72, 188, 255, 0.5);
+}
+
+/* Smooth momentum scrolling for iOS */
+.polestar-scrollable {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Scale effect for active states */
+.active\:scale-98:active {
+  transform: scale(0.98);
+}
+
+/* Highly optimized stats bar scrolling animations for PageSpeed */
+.stats-scroll-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-scroll-content {
+  display: flex;
+  animation: infinite-scroll-mobile 6s linear infinite;
+  will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .stats-scroll-content {
+    animation: infinite-scroll-desktop 10s linear infinite;
+  }
+}
+
+@keyframes infinite-scroll-mobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes infinite-scroll-desktop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Optimized portfolio carousel - reduced complexity for PageSpeed */
+.animate-portfolio-scroll {
+  animation: portfolio-scroll 25s linear infinite;
+  will-change: transform;
+}
+
+@keyframes portfolio-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Enhanced mobile menu animations with Polestar easing */
+@keyframes polestar-slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-polestar-slide-in {
+  animation: polestar-slide-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Minimal critical animations for PageSpeed optimization */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+/* Mobile slide animations - optimized for performance */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.2s ease-out forwards;
+}
+
+/* Optimized dropdown animations - Firefox compatible */
+@keyframes slide-down-only {
+  from {
+    transform: translateY(-5px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down-only {
+  animation: slide-down-only 0.2s ease-in-out forwards;
+}
+
+/* Smooth scrolling - disabled on low-end devices */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  .animate-fade-in,
+  .animate-slide-in-right,
+  .animate-slide-down-only,
+  .animate-polestar-slide-in,
+  .stats-scroll-content,
+  .animate-portfolio-scroll {
+    animation: none;
+  }
+}
+
+/* Hide scrollbars but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox-compatible image loading - removed content-visibility */
+img {
+  /* Removed content-visibility for Firefox compatibility */
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Touch target optimization for mobile */
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+/* Mobile-specific optimizations for PageSpeed */
+@layer utilities {
+  .mobile-touch-target {
+    @apply min-h-[48px] min-w-[48px] touch-manipulation;
+  }
+  
+  .mobile-container {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .mobile-text-sm {
+    @apply text-sm sm:text-base;
+  }
+  
+  .mobile-text-base {
+    @apply text-base sm:text-lg;
+  }
+  
+  .mobile-text-lg {
+    @apply text-lg sm:text-xl lg:text-2xl;
+  }
+}
+
+/* Mobile performance optimizations for PageSpeed */
+@media (max-width: 768px) {
+  .animate-fade-in {
+    animation-duration: 0.2s;
+  }
+  
+  .stats-scroll-content {
+    will-change: transform;
+  }
+  
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  video {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Safe area insets for mobile devices with notches */
+@supports (padding: max(0px)) {
+  .safe-area-inset-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  .safe-area-inset-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Navbar offset utility - compensates for fixed navbar height */
+.navbar-offset {
+  padding-top: 4rem; /* 64px for mobile */
+}
+
+@media (min-width: 768px) {
+  .navbar-offset {
+    padding-top: 4.5625rem; /* 73px for desktop */
+  }
+}
+
+/* Smooth scroll offset for anchor links */
+.scroll-offset {
+  scroll-margin-top: 4rem;
+}
+
+@media (min-width: 768px) {
+  .scroll-offset {
+    scroll-margin-top: 4.5625rem;
+  }
+}
+
+/* Firefox-specific video and image optimizations */
+@-moz-document url-prefix() {
+  video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  img {
+    object-fit: contain;
+    width: auto;
+    height: auto;
+  }
+}
