@@ -43,7 +43,7 @@ const YouTubeHero: React.FC<YouTubeHeroProps> = ({ content }) => {
     secondary_button_text: "Palvelut",
     secondary_button_url: "/palvelut",
     background_video_desktop: "https://faytlsrwiszkvakznkux.supabase.co/storage/v1/object/public/media/videos/blondify_hero.mp4",
-    background_video_mobile: "https://faytlsrwiszkvakznkux.supabase.co/storage/v1/object/public/media/videos/mobile_hero2025.mp4",
+    background_video_mobile: "https://respect.s3.ap-south-1.amazonaws.com/prod/plhipmkamt_1751388878885.mp4",
     background_poster: "https://faytlsrwiszkvakznkux.supabase.co/storage/v1/object/public/media/videos/hero_poster.jpg"
   };
 
